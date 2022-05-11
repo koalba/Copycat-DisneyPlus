@@ -1,0 +1,12 @@
+<form class="search__form">
+    <input type="text" name="search" placeholder="Search by title, character or genre" class="search__input" [(ngModel)]="valor">
+</form>
+<div class="search">
+    <h2 class="search__h2">Explore</h2>
+    <ul class="search__ul">
+            <li *ngFor=" let card of cards | filter:valor"
+                class="search__li">
+                <app-slider-card [data]="card" [tipo]="'slider'" ></app-slider-card>
+            </li>
+        </ul>
+</div>
